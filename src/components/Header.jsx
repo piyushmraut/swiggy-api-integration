@@ -3,11 +3,16 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 function Header() {
+  // Subscribing to the store
+  const cardItems = useSelector((store) => store.cart.items);
+  console.log(cardItems);
+
   const [btnName, setBtnName] = useState("LogIn");
   const onlineStatus = useOnlineStatus();
-  const {loggedInUser} = useContext(UserContext);
+  const { loggedInUser } = useContext(UserContext);
   const handleChange = () => {
     if (btnName === "LogIn") {
       setBtnName("LogOut");
@@ -39,8 +44,8 @@ function Header() {
           <li className="px-4 text-xl">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="px-4 text-xl">
-            <Link to="/cart">Cart</Link>
+          <li className="px-4 text-xl font-semibold">
+            <Link to="/cart">Cart-({cardItems.length})</Link>
           </li>
           <button
             className="px-4 mr-4 text-xl border bg-green-200 border-green-700"

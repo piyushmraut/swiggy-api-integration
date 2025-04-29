@@ -8,6 +8,7 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import Body from "./components/Body";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Cart from "./components/Cart";
 // import Grocery from './components/Grocery'
 
 // Let's try to apply lazy loading over there
@@ -38,6 +39,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path:"/cart",
+        element:<Cart/>
       },
       {
         path: "/restaurant/:resId",
