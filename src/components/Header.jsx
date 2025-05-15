@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 function Header() {
   // Subscribing to the store
   const cardItems = useSelector((store) => store.cart.items);
-  console.log(cardItems);
 
   const [btnName, setBtnName] = useState("LogIn");
   const onlineStatus = useOnlineStatus();

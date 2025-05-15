@@ -1,10 +1,9 @@
 import { CDN_URL } from "../utils/constants";
-
+import React from "react";
 export default function RestaurantCard({ resData }) {
-  let { name, cuisines, avgRating, costForTwo, locality, cloudinaryImageId } =
-    resData.info;
+  let { name, cuisines, avgRating, costForTwo, locality, cloudinaryImageId } = resData;
   return (
-    <div className="p-4 m-4 w-[250px] border border-slate-600 rounded-lg bg-gradient-to-tr from-slate-50 to-slate-200">
+    <div data-testid="resCard" className="p-4 m-4 w-[250px] border border-slate-600 rounded-lg bg-gradient-to-tr from-slate-50 to-slate-200">
       <img
         src={CDN_URL + cloudinaryImageId}
         alt="loading"
@@ -28,11 +27,13 @@ export default function RestaurantCard({ resData }) {
  *  Higher Order function take input as a Component and it enhances the component
  */
 
-export function withpromotedLabel(RestaurantCard){
-  return (props)=>{
-    return <div>
-      <label>Promoted</label>
-      <RestaurantCard {...props}/>
-    </div>
-  }
+export function withpromotedLabel(RestaurantCard) {
+  return (props) => {
+    return (
+      <div>
+        <label>Promoted</label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 }

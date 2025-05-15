@@ -63,6 +63,7 @@ function Body() {
           type="text"
           placeholder="Enter the food restaurant or Food"
           className="pr-16 pl-2 ml-8 mr-2 h-10 border border-red-500"
+          data-testid="searchInput"
           value={searchQuery}
           onChange={(e) => {
             setSearchQuery(e.target.value);
@@ -101,7 +102,7 @@ function Body() {
       <div className="flex flex-wrap p-4 m-4 justify-center">
         {filteredList.map((resData) => (
           <Link to={"/restaurant/" + resData.info.id} key={resData.info.id}>
-            <RestaurantCard resData={resData} />
+            <RestaurantCard resData={resData.info} />
           </Link>
         ))}
       </div>
