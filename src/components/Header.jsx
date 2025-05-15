@@ -22,7 +22,7 @@ function Header() {
   return (
     // Logo
     // NavItems
-    <div className="flex justify-between items-center bg-gradient-to-tr from-red-200 to-pink-250 border border-red-600 mx-4 my-4">
+    <div className="flex justify-between items-center bg-gradient-to-tr from-purple-200 to-pink-250 border border-red-600 mx-4 my-4">
       <div>
         <img src={LOGO_URL} alt="" className="w-30 h-24 p-2" />
       </div>
